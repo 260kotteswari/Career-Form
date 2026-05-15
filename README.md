@@ -1,2 +1,2 @@
 # Career-Form
-Thank you for reviewing my application. I am highly interested in joining your organization as a Software Developer and eager to contribute my skills while learning from experienced professionals.
+The Career Form project is a modern recruitment application developed using Angular and Node.js. It enables candidates to apply for job opportunities through an interactive multi-step form with document upload and email notification features. The application focuses on responsive design, clean UI, and efficient form handling.
