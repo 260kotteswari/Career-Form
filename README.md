@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CareerForm
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# Career-Form
+The Career Form project is a modern recruitment application developed using Angular and Node.js. It enables candidates to apply for job opportunities through an interactive multi-step form with document upload and email notification features. The application focuses on responsive design, clean UI, and efficient form handling.
+>>>>>>> b53d59fc7805b1acfa120428e2245ff6dcaf4fee
