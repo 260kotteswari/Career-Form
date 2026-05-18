@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+ 
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        </head>
+<body>
+<form [formGroup]="step1Form">
+<div class="form-card">
+  <div class="header">
+    <h2>Personal Information</h2>
+    <span>step 1 of 3</span>
+  </div>
+    <i class="fa-regular fa-user"></i> <label>Full Name</label><br>
+	<div class="field">
+    <input type="text" placeholder="Enter your full name" formControlName="fullname" >
+  </div>
+    @if (step1Form.controls['fullname'].touched || step1Form.controls['fullname'].dirty) {
+  <div class="text-danger">
+
+    @if (step1Form.controls['fullname'].errors?.['required']) {
+      <span>This field is required</span>
+    }
+    @else if (step1Form.controls['fullname'].errors?.['minlength']) {
+      <span>Minimum 4 characters required</span>
+    }
+    @else if (step1Form.controls['fullname'].errors?.['pattern']) {
+      <span>
+        Only alphabets and spaces are allowed.
+        Numbers and special characters are not permitted.
+      </span>
+    }
+
+  </div>
+}
+  <br>
+
+  
+    <i class="fa-regular fa-envelope"></i><label>Email Id</label><br>
+	<div class="field">
+    <input type="email" placeholder="example@domain.com" formControlName="email">
+  </div>
+  @if(step1Form.controls['email'].touched){
+  <div class="text-danger">
+    @if(step1Form.controls['email'].errors?.['required']){
+      <span>Email is required</span>
+    }
+    @if(step1Form.controls['email'].errors?.['email']){
+      <span>Must be a valid and active email address</span>
+    }
+  </div>
+}
+  <br>
+
+ <i class="fa-solid fa-phone"></i><label>Contact Number</label><br>
+  <div class="field">
+    <input type="tel" placeholder="+91 Enter your mobile number" formControlName="phone">
+  </div>
+  @if(step1Form.controls['phone'].touched){
+  <div class="text-danger">
+    @if(step1Form.controls['phone'].errors?.['required']){
+      <span>Phone number is required</span>
+    }
+    @if(step1Form.controls['phone'].errors?.['pattern']){
+      <span>Numbers only. Minimum 10 digits</span>
+    }
+  </div>
+}<br>
+
+  
+    <i class="fa-regular fa-calendar"></i><label>Date of Birth</label><br>
+	<div class="field">
+    <input type="text" placeholder="Select your Date of Birth" formControlName="dob"> 
+  </div>
+   @if(step1Form.controls['dob'].touched){
+  <div class="text-danger">
+    <span>Must be a valid date</span>
+  </div>
+}<br>
+  
+<i class="fa-solid fa-location-dot"></i><label>Location</label><br>
+  <div class="field">
+    
+    <input type="text" placeholder="Select your location" formControlName="location">
+  </div>
+ <br>
+
+  
+    <i class="fa-regular fa-pen-to-square"></i><label>Describe yourself</label><br>
+    <div class="field textarea">
+	<textarea placeholder="Describe yourself in a few sentences your personality, passions, or creative strengths" formControlName="about"></textarea>
+  </div><br>
+  
+  <div class="btn-group">
+  <button class="Next-btn" type="button" (click)="next()">Next
+  <i class="fa-solid fa-arrow-right"></i>
+  </button>
+   
+  </div>
+</div>
+</form>
+</body>
+</html>
+

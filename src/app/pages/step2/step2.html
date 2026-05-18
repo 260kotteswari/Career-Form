@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form - Step 2</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="form-card">
+
+ 
+  <div class="header">
+    <i class="fa-solid fa-arrow-left back-arrow" (click)="goBack()"></i>
+    <span>step 2 of 3</span>
+  </div>
+
+  <h2>Creative Mind and Mental Strength Assessment</h2>
+
+  <div class="question">
+    <label>1. When your creative ideas face rejection, what is your next move?</label>
+    <textarea #q1></textarea>
+  </div>
+
+  <div class="question">
+    <label>2. Describe the most unconventional idea you ever had and what made it different.</label>
+    <textarea #q2></textarea>
+  </div>
+
+  <div class="question">
+    <label>3. In a marketing campaign, what matters most to you — emotion, logic, or attention? Why?</label>
+    <textarea #q3></textarea>
+  </div>
+
+  <div class="question">
+    <label>
+      4. You have limited resources and time to launch a brand campaign.
+      How would you still make it unforgettable?
+    </label>
+    <textarea #q4></textarea>
+  </div>
+
+  <div class="btn-group">
+    <button class="btn next-btn"  (click)="goNext(q1.value, q2.value, q3.value, q4.value)">Next →</button>
+  </div>
+</div>
+</body>
+</html>

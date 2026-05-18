@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Form - Step 3</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="form-card">
+<div class="header">
+    <i class="fa-solid fa-arrow-left back-arrow" (click)="goBack()"></i>
+    <span>step 3 of 3</span>
+  </div>
+
+   <h2>Open positions and final details</h2>
+
+  <label>1. Preferred Role / Area of Interest</label>
+  <div class="field">
+    <i class="fa-solid fa-briefcase"></i>
+    <select #role>
+      <option value="">Select role</option>
+       <option >Full Stack Developer</option>
+			        <option  >Java Developer</option>
+			        <option >Angular Developer</option>
+			        <option >Manual Tester / Automation Tester</option>
+    </select>
+  </div>
+
+  <label>2. Expected Salary (per month)</label>
+  <div class="field">
+    <i class="fa-solid fa-indian-rupee-sign"></i>
+    <input type="text" #salary>
+  </div>
+
+  <label>3. Availability to Join</label>
+  <div class="field">
+    <i class="fa-solid fa-calendar-check"></i>
+    <input type="date" #joinDate>
+  </div>
+
+  <label>4. Upload Your Resume (PDF)</label>
+  <label class="file-upload">
+    <i class="fa-solid fa-cloud-arrow-up"></i><br>
+    Choose file
+    <input type="file"  #resume accept=".pdf" (change)="onFileSelected($event)">
+  </label>
+
+  <label>5. Additional Message (optional)</label>
+  <textarea #message></textarea>
+
+
+<div class="btn-group">
+    <button class="btn submit-btn"  (click)="submitForm(role.value, salary.value, joinDate.value, message.value)">
+      Submit
+    </button>
+  </div>
+</div>
+</body>
+</html>
+
